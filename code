@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+#include<vector>
+using std::vector;
+
+int min_index(vector<int>& V){
+    int i,min_idx=0;
+    int value=V[0];//initial minimum at index 0;constantly updating it
+    for (i=1;i<V.size();i++){
+        if(V[i]<value){
+            value=V[i];
+            min_idx=i;
+        }
+        }
+    
+    return min_idx;
+}
+int main()
+{   int n;
+    vector<int>V;
+    while(cin>>n){
+        V.push_back(n);
+    }
+    if (V.size()==0)
+        exit(-1);
+    else
+        cout<<"the index of the smallest element:"<<min_index(V)<<endl;
+        
+    return 0;
+}
